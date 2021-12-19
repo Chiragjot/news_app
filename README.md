@@ -1,7 +1,7 @@
 # news_app
 
 A new Flutter application.
-gueguvu
+
 ## Getting Started
 
 This project is a starting point for a Flutter application.
