@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:news_app/news_screen.dart';
+import './screens/news_screen.dart';
 import 'package:fluttericon/linecons_icons.dart';
 
 class NewsTabs extends StatefulWidget {

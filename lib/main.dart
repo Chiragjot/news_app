@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:news_app/news_detail_screen.dart';
+import './screens/news_detail_screen.dart';
 import 'package:get/get.dart';
 import 'package:news_app/news_tabs.dart';
 
@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: ThemeData(
         fontFamily: 'Headline',
-        primarySwatch: Colors.lime,
+        primarySwatch: Colors.red,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       home: NewsTabs(),
