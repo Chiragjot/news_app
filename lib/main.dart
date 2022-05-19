@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import './screens/news_detail_screen.dart';
 import 'package:get/get.dart';
 import 'package:news_app/news_tabs.dart';
+
+import './screens/news_detail_screen.dart';
 
 void main() {
   runApp(MyApp());

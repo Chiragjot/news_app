@@ -1,6 +1,6 @@
 import 'package:news_app/models/source_model.dart';
 
-class Article{
+class Article {
   Source source;
   String author;
   String title;
@@ -11,17 +11,17 @@ class Article{
   String content;
 
   Article({
-    this.source,
-    this.author,
-    this.title,
-    this.description,
-    this.url,
-    this.urlToImage,
-    this.publishedAt,
-    this.content,
+    required this.source,
+    required this.author,
+    required this.title,
+    required this.description,
+    required this.url,
+    required this.urlToImage,
+    required this.publishedAt,
+    required this.content,
   });
 
-  factory Article.fromjson(Map<String, dynamic> json){
+  factory Article.fromjson(Map<String, dynamic> json) {
     return Article(
       source: Source.fromJson(json['source']),
       author: json['author'] as String,

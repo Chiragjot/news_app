@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
-import './screens/news_screen.dart';
 import 'package:fluttericon/linecons_icons.dart';
+import 'package:news_app/screens/saved_news_screen.dart';
+
+import './screens/news_screen.dart';
 
 class NewsTabs extends StatefulWidget {
   @override
@@ -8,9 +10,8 @@ class NewsTabs extends StatefulWidget {
 }
 
 class _NewsTabsState extends State<NewsTabs> {
-
   int pageIndex = 0;
-  _setIndex(int index){
+  _setIndex(int index) {
     setState(() {
       pageIndex = index;
     });
@@ -37,7 +38,7 @@ class _NewsTabsState extends State<NewsTabs> {
           ],
         )),
       ),
-      body: NewsScreen(pageIndex),
+      body: pageIndex == 3 ? SaveNewsScreen() : NewsScreen(pageIndex),
       bottomNavigationBar: BottomNavigationBar(
         onTap: _setIndex,
         backgroundColor: Color.fromRGBO(242, 238, 203, 1),
@@ -46,20 +47,21 @@ class _NewsTabsState extends State<NewsTabs> {
         currentIndex: pageIndex,
         items: [
           BottomNavigationBarItem(
-            backgroundColor: Color.fromRGBO(242, 238, 203, 1),
-            icon: Icon(Linecons.globe),
-            label: 'Global'
-          ) ,
+              backgroundColor: Color.fromRGBO(242, 238, 203, 1),
+              icon: Icon(Linecons.globe),
+              label: 'Global'),
           BottomNavigationBarItem(
-            backgroundColor: Color.fromRGBO(242, 238, 203, 1),
-            icon: Icon(Icons.sports_soccer),
-            label: 'Sports'
-          ),
+              backgroundColor: Color.fromRGBO(242, 238, 203, 1),
+              icon: Icon(Icons.sports_soccer),
+              label: 'Sports'),
           BottomNavigationBarItem(
-            backgroundColor: Color.fromRGBO(242, 238, 203, 1),
-            icon: Icon(Icons.flag),
-            label: 'local'
-          )
+              backgroundColor: Color.fromRGBO(242, 238, 203, 1),
+              icon: Icon(Icons.flag),
+              label: 'local'),
+          BottomNavigationBarItem(
+              backgroundColor: Color.fromRGBO(242, 238, 203, 1),
+              icon: Icon(Icons.bookmark),
+              label: 'Saved')
         ],
       ),
     );
