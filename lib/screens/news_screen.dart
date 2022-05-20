@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:news_app/models/api_service.dart';
 import 'package:news_app/models/article_model.dart';
-import 'package:news_app/models/source_model.dart';
+
 import '../widgets/news_screen_widget.dart';
 
 class NewsScreen extends StatelessWidget {
@@ -13,7 +13,7 @@ class NewsScreen extends StatelessWidget {
     return FutureBuilder(
       future: client.getArticle(),
       builder: (BuildContext context, AsyncSnapshot<List<Article>> snapshot) {
-        List articles = snapshot.data;
+        List article = snapshot.data;
         if (snapshot.hasData) {
           return ListView.separated(
               separatorBuilder: (context, index) {
@@ -22,16 +22,16 @@ class NewsScreen extends StatelessWidget {
                 );
               },
               padding: EdgeInsets.all(15),
-              itemCount: articles.length,
+              itemCount: article.length,
               itemBuilder: (context, i) {
                 return NewsScreenWidget(
-                  author: articles[i].author,
-                  title: articles[i].title.toString(),
-                  description: articles[i].description.toString(),
-                  url: articles[i].url.toString(),
-                  urlToImage: articles[i].urlToImage,
-                  publishedAt: DateTime.parse(articles[i].publishedAt),
-                  content: articles[i].content.toString(),
+                  author: article[i].author,
+                  title: article[i].title.toString(),
+                  description: article[i].description.toString(),
+                  url: article[i].url.toString(),
+                  urlToImage: article[i].urlToImage,
+                  publishedAt: DateTime.parse(article[i].publishedAt),
+                  content: article[i].content.toString(),
                 );
               });
         }
